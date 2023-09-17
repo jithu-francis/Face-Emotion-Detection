@@ -29,7 +29,7 @@ Follow these steps to run the program:
    python main.py
    ```
 
-   This script loads the pre-trained model and tests it on sample images in the `test_images` directory.
+   This script loads the pre-trained model and you can feed your live video stream and check your emotions.
 
 ## Requirements
 
@@ -50,7 +50,7 @@ pip install tensorflow keras opencv-python numpy matplotlib
 
 ## Model Architecture
 
-Our model is based on a Convolutional Neural Network (CNN) architecture, which is widely used for image classification tasks. The details of the architecture can be found in the `model.py` file.
+Our model is based on a Convolutional Neural Network (CNN) architecture, which is widely used for image classification tasks. The details of the architecture can be found in the `Emotion_Detection_Model.ipynb` file.
 
 ## Dataset
 
