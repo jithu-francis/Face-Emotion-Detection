@@ -53,10 +53,10 @@ time.sleep(2.0)
 while True:
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
-    (locs, preds) = detect_and_predict_mask(frame, faceNet, maskNet)
+    (locs, preds) = detect_and_predict(frame, faceNet, maskNet)
     for (box, pred) in zip(locs, preds):
         (startX, startY, endX, endY) = box
-        (happy, surprised) = pred
+        (surprised, happy) = pred
         label = "Happy" if happy > surprised else "Surprise"
         color = (0, 255, 0) if label == "Happy" else (0, 0, 255)
         label = "{}: {:.2f}%".format(label, max(happy, surprised) * 100)
