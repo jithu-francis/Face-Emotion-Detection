@@ -64,7 +64,7 @@ Training the model is not included in this repository due to the absence of the 
 
 2. Split the dataset into training and testing sets.
 
-3. Use the provided model architecture in `model.py` as a starting point and train the model using your dataset.
+3. Use the provided model architecture in `Emotion_Detection_Model.ipynb` as a starting point and train the model using your dataset.
 
 4. Save the trained model weights.
 
