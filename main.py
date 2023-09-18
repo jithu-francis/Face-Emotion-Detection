@@ -39,9 +39,9 @@ def detect_and_predict(frame, faceNet, maskNet):
         return (locs, preds)
 
 print("[INFO] loading face detector model...")
-prototxtPath = os.path.sep.join(["face_detector", "deploy.prototxt"])
-weightsPath = os.path.sep.join(["face_detector",
-                                "res10_300x300_ssd_iter_140000.caffemodel"])
+prototxtPath = os.path.sep.join(["pretrained_face_detector", "deploy_values.prototxt"])
+weightsPath = os.path.sep.join(["pretrained_face_detector",
+                                "model1.caffemodel"])
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 print("[INFO] loading face emotion detector model....")
 maskNet = load_model("emotion_detection.model")
@@ -57,7 +57,7 @@ while True:
     for (box, pred) in zip(locs, preds):
         (startX, startY, endX, endY) = box
         (surprised, happy) = pred
-        label = "Happy" if happy > surprised else "Surprise"
+        label = "Happy" if surprised > happy else "Surprise"
         color = (0, 255, 0) if label == "Happy" else (0, 0, 255)
         label = "{}: {:.2f}%".format(label, max(happy, surprised) * 100)
         cv2.putText(frame, label, (startX, startY - 10),
